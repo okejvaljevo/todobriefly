@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Montserrat:wght@300;400;600;700&family=Fira+Sans:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500&?family=Poppins:wght@400;500display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Todo list</title>
+  <link rel="stylesheet" href="front/css/main.css">
+</head>
+<body>
+
+  <header>
+    <h1>Todo List</h1>   
+    <form id="new-todo-form">
+      <h3>Add a new todo: </h3>
+      <input type="text" id="content" placeholder="What do you have planned?" autocomplete="off">
+      <h4>Pick a category</h4>
+      <div class="options">
+        <label>
+          <input type="radio" name="category" id="category1" value="business" checked="checked">
+          <span class="bubble business"></span>
+          <div>Business</div>
+        </label>
+        <label>
+          <input type="radio" name="category" id="category2" value="personal">
+          <span class="bubble personal"></span>
+          <div>Personal</div>
+        </label>
+      </div>
+      <input type="submit" id="new-task-submit" value="Add todo">
+    </form>
+  </header>
+
+  <main>
+    <section class="todo-list">
+      <h2>Todos</h2>
+      <div class="list" id="todo-list">
+        <!-- <div class="todo-item">
+          <label for="">
+            <input type="checkbox">
+            <span class="bubble business"></span>
+          </label>
+          <div class="todo-content">
+            <input type="text" value="Make a video" readonly >
+          </div>
+          <div class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
+        </div>
+
+        <div class="todo-item done">
+          <label for="">
+            <input type="checkbox">
+            <span class="bubble personal"></span>
+          </label>
+          <div class="todo-content">
+            <input type="text" value="Get milk" readonly >
+          </div>
+          <div class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
+        </div> -->
+
+      </div>
+    </section>
+  </main>
+
+  <script src="front/js/main.js"></script>
+
+</body>
+</html>
+

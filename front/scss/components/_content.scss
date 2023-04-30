@@ -1,0 +1,146 @@
+main {
+  flex: 1 1 0%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  .todo-list {
+    padding: 0.75rem;
+    #todo-list {
+      margin: 1rem 0;
+      .todo-item { 
+        display: flex;
+        align-items: center;
+        background-color: $darker1;
+        padding: 0.75rem;
+        border-radius: 1rem;
+        margin-bottom: 0.75rem;
+        box-shadow: $shadow2;
+        label {
+          display: block;
+          margin-right: 1rem;
+          cursor: pointer;
+          span {
+            &.bubble {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              width: 1.75rem;
+              height: 1.75rem;
+              border-radius: 50%;
+              border: 2px solid $dark;
+              &.business {
+                border-color: $business;
+                box-shadow: $businessGlow;
+              }
+              &.personal {
+                border-color: $personal;
+                box-shadow: $personalGlow;
+              }
+              &.solved {
+                border: none;
+                box-shadow: none;
+              }
+              &::before, &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                opacity: 0;
+                transition: 0.2s ease-in-out;
+              }
+              &::before {
+                width: 0.75rem;
+                height: 0.25rem;
+              }
+              &::after {
+                width: 1.75rem;
+                height: 0.25rem;
+              }
+              &.business {
+                &::before {
+                  background-color: $business;
+                }
+                &::after {
+                  background-color: $business;
+                }
+              }
+              &.personal {
+                &::before {
+                  background-color: $personal;
+                }
+                &::after {
+                  background-color: $personal;
+                }
+              }
+            }
+          }
+          input {
+            &[type="radio"], &[type="checkbox"] {
+              display: none;
+            }
+            &:checked ~ .bubble::before {
+              transform: translateX(-0.3125rem) translateY(0.3125rem) rotateZ(45deg);
+              opacity: 1;
+            }
+            &:checked ~ .bubble::after {
+              transform: translateX(0.4375rem) rotateZ(135deg);
+              opacity: 1;
+            }
+          }
+        }
+        .todo-content {
+          flex: 1 1 0%;
+          input {
+            color: $taskish;
+            font-size: 1.25rem;
+            width: 100%;
+            display: block;
+            transition: $transit2;
+            &:not(:read-only) {
+              color: $pink;
+            }
+          }
+        }
+        .actions {
+          display: flex;
+          margin: 0 -0.5rem;
+          button {
+            cursor: pointer;
+            margin: 0 0.5rem;
+            font-size: 1.0625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: $transit2;
+            @media only screen and (max-width: 600px) {
+              font-size: 1rem;
+            }
+            &:hover {
+              opacity: .8;
+            }
+            &:active {
+              opacity: .6;
+            }
+            &.edit {
+              color: $purple;
+            }
+            &.delete {
+              color: $delete;
+            }
+          }
+        }
+        &.done {
+          box-shadow: $shadow3;
+          background-color: $darker;
+          .todo-content {
+            input {
+              text-decoration: line-through;
+              text-decoration-color: $greenish;
+              text-decoration-thickness: 1px;
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
